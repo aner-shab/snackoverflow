@@ -1,0 +1,17 @@
+@import './colors.scss';
+
+*{
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+}
+
+body{
+    display: flex;
+    height: 95vh;
+    align-items: center;
+    justify-content: center;
+    background-color: $backdrop;
+}
+app-root{
+    border-radius: 15px;
+    box-shadow: grey 0px 10px 10px;
+}

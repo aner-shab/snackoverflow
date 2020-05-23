@@ -1,0 +1,69 @@
+@import '../animations.scss';
+@import '../colors.scss';
+::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
+}
+.chatbox{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background: ghostwhite;
+    height: 80vh;
+    width: 50vw;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    overflow-y: scroll;
+    .chatbox__messages{
+        list-style-type: none; 
+        margin: 0; 
+        padding: 5% 0 0 0;
+        margin-bottom: 40px; 
+    }
+}
+
+
+.inputbox{
+    display: flex;
+    align-items: center;
+    background: #f1f4f4;
+    height: 3em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    input{
+        border: none;
+        outline: none;
+        margin-left: 5%;
+        height: 2em;
+        padding-left: 4px;     
+        width: 80%;   
+        box-shadow: lightgrey 2px 4px 6px;
+        border-radius: 10px;
+        background-color: #ececec;
+        transition: background-color 0.2s ease-in-out;
+        &:focus{
+            background-color:white;
+        }
+    }
+    ::placeholder{
+        font-style: italic;
+        opacity: 0.6;
+    }
+    .inputbox__send{
+        user-select: none;
+        height: 30px;
+        width: 30px;
+        margin-left: 10px;
+        padding: 0;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s ease-in;
+        &:hover{
+            opacity: 1;
+        }
+        img{
+            height: 100%
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div class="chatbox" #chatbox>
+  <ul class="chatbox__messages">
+    <app-chat-bubble 
+      *ngFor="let msg of messagesService.messages" 
+      [msg]="msg" 
+      (answerQuestion)="onAnswerQuestion($event)">
+    </app-chat-bubble>
+  </ul>
+</div>
+
+<app-notification-bar></app-notification-bar>
+
+<div class="inputbox">
+  <input #inputField tabindex="2"
+  placeholder="Type in a question, or select an existing one to answer it."
+  autocomplete="off" type="text" [(ngModel)]="textInput" (keyup)="onKeyUp()" 
+  (keydown)="onKeyDown($event)" />
+  <button class="inputbox__send" (click)="onMessageSent()">
+    <img src="../assets/send.png">
+  </button>
+</div> 

@@ -1,0 +1,5 @@
+<div class="notification-bar">
+    <span *ngIf="someoneIsTyping && someoneIsTyping !== messagesService.currentUser">
+        {{someoneIsTyping}} is typing...
+    </span>
+</div>

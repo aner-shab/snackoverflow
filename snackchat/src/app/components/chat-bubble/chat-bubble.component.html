@@ -1,0 +1,34 @@
+<li [ngClass]="{'chatbox__messages__item--rtl': msg.author !== currentUser}" class="chatbox__messages__item">
+
+    <div class="chatbox__messages__item__avatar">
+        <img [src]="msg.author !== 'Bucky' ? '../assets/avatar.png' : '../assets/bucky.png'">
+    </div>
+
+    <span>
+        <span class="chatbox__message__item__username">
+            {{ msg.type === 'answer' ? '✔️ ' : '' }}
+            {{ msg.author === currentUser ? 'You' : msg.author }}
+            {{ msg.type === 'answer' ? ' answered question #'+msg.questionId :
+            (msg.resolved || msg.author === currentUser) ? ' asked' : ' asks' }}:
+        </span>
+
+        <div class="chatbox__messages__item__bubble" [id]="msg.type+msg.questionId"
+        [ngClass]="{
+            'chatbox__messages__item__bubble--answered': msg.resolved,
+            'chatbox__messages__item__bubble--resolution': msg.type === 'answer',
+            'chatbox__messages__item__bubble--highlight': msg.highlight 
+        }"
+        (click)="onResolvedMessageClicked(msg)">
+            {{msg.message}}
+            <span *ngIf="msg.type === 'question' && msg.author !== currentUser && !msg.resolved" class="chatbox__messages__item__bubble__answer-button">
+                <button  (click)="onAnswerQuestionClicked(msg.questionId)" class="chatbox__messages__item__bubble__answer-button__button">Answer This Question</button>
+            </span>
+            <span class="chatbox__messages__item__bubble__info">
+                <span class="chatbox__messages__item__bubble__question-id" *ngIf="msg.type === 'question'">
+                    Question #{{msg.questionId}}
+                </span>
+            </span>
+        </div>
+    </span>
+    
+</li>

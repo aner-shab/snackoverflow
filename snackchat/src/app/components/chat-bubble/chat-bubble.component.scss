@@ -1,0 +1,101 @@
+@import '../../../colors.scss';
+@import '../../../animations.scss';
+
+li { 
+    padding: 5px 10px; 
+}
+.chatbox__messages__item{
+    display: grid;
+    grid-gap: 14px;
+    grid-template-columns: 50px auto;
+    transition: opacity 1s ease-in;
+    animation: revealUp .5s 0s cubic-bezier(0,.57,.81,1.01) forwards;
+    .chatbox__messages__item__avatar{
+        user-select: none;
+        width: 50px;
+        max-width: 50px;
+        height: 50px;
+        max-width: 50px;
+        border-radius: 50px;
+        background: #d9e3e6;
+        overflow: hidden;
+        img{
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        animation: bounce 0.6s;
+        &:hover{
+            animation: bounce 0.6s;
+        }
+    }
+    .chatbox__message__item__username{
+        font-size: 12px;
+        font-weight: bold;
+        direction: ltr;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .chatbox__messages__item__bubble{
+        margin-top: 0;
+        border-radius: 0px 15px 15px;
+        padding: 5px 10px;
+        background: $brand-light;
+        box-shadow: lightgray 0px 5px 10px;
+        line-height: 1.5em;
+        .chatbox__messages__item__bubble__info{
+            display: flex;
+            direction: rtl;
+        }
+        .chatbox__messages__item__bubble__answer-button{
+            display: flex;
+            justify-content: flex-end;
+            .chatbox__messages__item__bubble__answer-button__button{
+                display: block;
+                height: 25px;
+                width: 135px;
+                border-radius: 25px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                margin-top: 4px;
+                padding: 6px;
+                font-size: 11px;
+                background: $brand-medium;
+                color: ghostwhite;
+                &:hover{
+                    animation: tada 0.7s;
+                }
+                &:active{
+                    animation: bounce 0.6s ease-in-out;
+                }
+            }
+        }
+        .chatbox__messages__item__bubble__question-id{
+            font-size: 11px;
+            padding-top: 6px;
+            align-self: flex-end;
+        }
+    }
+    .chatbox__messages__item__bubble--answered{
+        opacity: 0.6;
+        cursor: pointer;
+    }
+    .chatbox__messages__item__bubble--resolution{
+        background: $brand-lighter !important;
+        color: black !important;
+        cursor: pointer;
+    }
+    .chatbox__messages__item__bubble--highlight{
+        animation: tada 1s;
+    }
+}
+.chatbox__messages__item--rtl{
+    direction: rtl;
+    .chatbox__messages__item__bubble{
+        border-radius: 15px 0px 15px 15px;
+        background: $brand-bold;
+        color: ghostwhite;
+        direction: ltr;
+    }
+}

@@ -1,0 +1,14 @@
+.notification-bar{
+    height: 16px;
+    font-size: 10px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px lightgray;
+    background: ghostwhite;
+    span{
+        margin-left: 4px;
+        font-style: italic;
+        animation: popIn 0.45s linear 0s forwards;
+    }
+}

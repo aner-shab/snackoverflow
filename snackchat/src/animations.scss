@@ -1,0 +1,63 @@
+@keyframes tada {
+    10%, 20% {
+        transform: rotate3d(0, 0, 1, -3deg);
+    }
+    30%, 50%, 70%, 90% {
+        transform: rotate3d(0, 0, 1, 3deg);
+    }
+    40%, 60%, 80% {
+        transform:  rotate3d(0, 0, 1, -3deg);
+    }
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        margin-top: 20px;
+    }
+    to { 
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes popIn{
+    0%{
+        opacity: 0;
+        transform: scale(0.3) translate3d(0,0,0);
+    }
+    50%{
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    80%{
+        opacity: 1;
+        transform: scale(0.89);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 53% {
+        animation-timing-function:cubic-bezier(.215,.61,.355,1);
+        transform: translateY(0);
+    }
+    43% {
+        animation-timing-function:cubic-bezier(.755,.05,.855,.06);
+        transform:translate3d(0,-20px,0) scaleY(1.1)
+    }
+    70% {
+        animation-timing-function:cubic-bezier(.755,.05,.855,.06);
+        transform:translate3d(0,-8px,0) scaleY(1.05)
+    }
+    80% {
+        transition-timing-function:cubic-bezier(.215,.61,.355,1);
+        transform:translateZ(0) scaleY(.95)
+    }
+    90% {
+        transform:translate3d(0,-4px,0) scaleY(1.02)
+    }
+}

@@ -15,7 +15,7 @@
         <div class="chatbox__messages__item__bubble" [id]="msg.type+msg.questionId"
         [ngClass]="{
             'chatbox__messages__item__bubble--answered': msg.resolved,
-            'chatbox__messages__item__bubble--resolution': msg.type === 'answer',
+            'chatbox__messages__item__bubble--resolution': msg.type === 'answer' && msg.author !== currentUser,
             'chatbox__messages__item__bubble--highlight': msg.highlight 
         }"
         (click)="onResolvedMessageClicked(msg)">

@@ -7,7 +7,7 @@
 .chatbox{
     -ms-overflow-style: none;
     scrollbar-width: none;
-    background: ghostwhite;
+    background: white;
     height: 80vh;
     width: 50vw;
     border-top-right-radius: 15px;
@@ -25,7 +25,7 @@
 .inputbox{
     display: flex;
     align-items: center;
-    background: #f1f4f4;
+    background: ghostwhite;
     height: 3em;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -38,7 +38,8 @@
         width: 80%;   
         box-shadow: lightgrey 2px 4px 6px;
         border-radius: 10px;
-        background-color: #ececec;
+        background-color: #f6f6f6;
+        border: 1px solid $brand-lightest;
         transition: background-color 0.2s ease-in-out;
         &:focus{
             background-color:white;

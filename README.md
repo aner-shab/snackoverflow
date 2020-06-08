@@ -15,6 +15,3 @@ In the app, you may:
 * Type in a question in the input field.
 * Click a given answer to jump to its matching question, and vice versa.
 * Answer unresolved questions by pressing the "Answer this Question" button on their bubble.
-
-## Why Angular?
-My original thought was to do a take on this with web components and lit-html, but soon I realized I'll be spending all of the alloted time debugging kinks and bumps due to my unfamiliarity with the syntax. I defaulted to Angular because it is the freshest JS framework in my mind, and I can do very quick work with it -- and not because it's the ideal one for this demo (it's not).
